@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionManifest Version="7.0" ExtensionBundleId="com.nebula.redraw.cep" ExtensionBundleVersion="1.0.0"
+    ExtensionBundleName="NebulaRedraw AI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ExtensionList>
+        <Extension Id="com.nebula.redraw.cep.panel" Version="1.0.0" />
+    </ExtensionList>
+    <ExecutionEnvironment>
+        <HostList>
+            <Host Name="PHXS" Version="[21.0,25.9]" />
+            <Host Name="PHSP" Version="[21.0,25.9]" />
+        </HostList>
+        <LocaleList>
+            <Locale Code="All" />
+        </LocaleList>
+        <RequiredRuntimeList>
+            <RequiredRuntime Name="CSXS" Version="10.0" />
+        </RequiredRuntimeList>
+    </ExecutionEnvironment>
+    <DispatchInfoList>
+        <Extension Id="com.nebula.redraw.cep.panel">
+            <DispatchInfo>
+                <Resources>
+                    <MainPath>./index.html</MainPath>
+                    <ScriptPath>./host/index.jsx</ScriptPath>
+                    <CEFCommandLine>
+                        <Parameter>--enable-nodejs</Parameter>
+                        <Parameter>--mixed-context</Parameter>
+                    </CEFCommandLine>
+                </Resources>
+                <Lifecycle>
+                    <AutoVisible>true</AutoVisible>
+                </Lifecycle>
+                <UI>
+                    <Type>Panel</Type>
+                    <Menu>NebulaRedraw AI</Menu>
+                    <Geometry>
+                        <Size>
+                            <Width>300</Width>
+                            <Height>550</Height>
+                        </Size>
+                        <MinSize>
+                            <Width>280</Width>
+                            <Height>400</Height>
+                        </MinSize>
+                        <MaxSize>
+                            <Width>2000</Width>
+                            <Height>2000</Height>
+                        </MaxSize>
+                    </Geometry>
+                    <Icons>
+                        <Icon Type="Normal">./assets/icon_n.png</Icon>
+                        <Icon Type="RollOver">./assets/icon_r.png</Icon>
+                        <Icon Type="DarkNormal">./assets/icon_d.png</Icon>
+                        <Icon Type="DarkRollOver">./assets/icon_dr.png</Icon>
+                    </Icons>
+                </UI>
+            </DispatchInfo>
+        </Extension>
+    </DispatchInfoList>
+</ExtensionManifest>

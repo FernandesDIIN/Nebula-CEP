@@ -1,0 +1,154 @@
+:root {
+    --bg-dark: #323232;
+    --bg-header: #252525;
+    --text-main: #cccccc;
+    --accent: #4a4a4a;
+    --accent-hover: #555555;
+    --blue: #0e639c;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow: hidden;
+    font-size: 12px;
+    user-select: none;
+}
+
+header {
+    background-color: var(--bg-header);
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #444;
+}
+
+.logo { font-weight: bold; color: #fff; }
+
+main {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 80px);
+}
+
+#canvas-container {
+    flex: 1;
+    background: #1e1e1e;
+    border: 1px solid #444;
+    position: relative;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+canvas {
+    max-width: none;
+    cursor: crosshair;
+}
+
+#empty-state {
+    text-align: center;
+    padding: 20px;
+}
+
+.primary-btn {
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.tool-bar {
+    display: flex;
+    gap: 4px;
+    padding: 8px 0;
+    align-items: center;
+}
+
+.tool-btn {
+    background: var(--accent);
+    border: 1px solid #555;
+    color: white;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.tool-btn.active {
+    background: var(--blue);
+    border-color: #007acc;
+}
+
+.action-bar {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.process-btn {
+    flex: 1;
+    background: #2d5a27;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.secondary-btn {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.hidden { display: none !important; }
+
+#status-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #252525;
+    padding: 4px 10px;
+    font-size: 10px;
+    border-top: 1px solid #444;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background: var(--bg-dark);
+    padding: 20px;
+    border: 1px solid #555;
+    width: 80%;
+}
+
+.field { margin-bottom: 12px; }
+.field label { display: block; margin-bottom: 4px; }
+.field input, .field select {
+    width: 100%;
+    background: #1e1e1e;
+    border: 1px solid #444;
+    color: white;
+    padding: 6px;
+}
